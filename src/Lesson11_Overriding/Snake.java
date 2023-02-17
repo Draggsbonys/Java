@@ -5,7 +5,6 @@ public class Snake extends Animal {
     public void moving() {
         System.out.println("Snake crawling");
     }
-
     public static void amountTail () {
         System.out.println("No tail");
     }
