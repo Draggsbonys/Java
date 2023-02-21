@@ -5,6 +5,7 @@ public class Main {
         Main main = new Main();
 
         // Для compile time binding это объект типа Animal, а для runtime binding это объект типа Snake
+        // С помощью переменной animal мы можем обращаться только к тем элементам класса Snake, которые есть у класса Animal
         Animal animal = new Snake();
 
         /*
