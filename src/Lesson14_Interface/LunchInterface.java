@@ -2,6 +2,7 @@ package Lesson14_Interface;
 
 public class LunchInterface {
     interface Lunch {
+        int number = 10;
        final int cost = 200;
        void eat();
        void drink();
