@@ -11,4 +11,39 @@ package Overloading;
  * Методы могут иметь разные модификаторы доступа (public, protected, private, default), но они должны иметь одинаковое имя и параметры.
  */
 public class Animal {
+    /*
+     * Приоритетсность overloaded методов:
+     * Если при вызове метода его параметр лист соответствует нескольким параметрам overloaded методов
+     * Тогда приоритет их вызовов будет выглядеть следующим образом:
+     *
+     * Точное совпадение типов данных.
+     * Поглощающие типы данных (большие типы данных для primitive и parent классы для ссылочных типов)
+     * Autoboxed типы данных (только для примитивных типов)
+     * Varargs
+     */
+
+    // Приоритетность на примере примитивных типов данных
+    void abc (int a, int b) {
+        System.out.println(1);
+    }
+    void abc(long a, long b) {
+        System.out.println(2);
+    }
+    void abc(Integer a, Integer b) {
+        System.out.println(3);
+    }
+    void abc(int ... a) {
+        System.out.println(4);
+    }
+
+    // Приоритетность на примере ссылочных типов данных
+    void qwerty (String s){
+        System.out.println(1);
+    }
+    void qwerty(Object s) {
+        System.out.println(2);
+    }
+    void qwerty (String ... s) {
+        System.out.println(3);
+    }
 }

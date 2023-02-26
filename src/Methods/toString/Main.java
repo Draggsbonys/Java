@@ -1,4 +1,6 @@
-package toString;
+package Methods.toString;
+
+import Methods.toString.Animal;
 
 public class Main {
     public static void main(String[] args) {

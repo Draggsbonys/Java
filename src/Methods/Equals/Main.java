@@ -1,4 +1,4 @@
-package Equals;
+package Methods.Equals;
 
 public class Main {
     public static void main(String[] args) {
