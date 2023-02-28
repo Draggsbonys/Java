@@ -18,8 +18,7 @@ public class ConsoleService {
     private boolean isDoneClient = false;
     private boolean isDoneHotel = false;
     private boolean isDoneRoom = false;
-    public void consoleService(ArrayList<Hotel> hotelList, ArrayList<Client> clientList){
-
+    public void booking(ArrayList<Hotel> hotelList, ArrayList<Client> clientList){
         while(!isDoneClient) {
             System.out.println("Введите ваш номер телефона:");
             clientNumber = input.nextLine();
@@ -33,7 +32,11 @@ public class ConsoleService {
                 System.out.println("Клиент с таким номером не найден!");
             }
         }
+        bookHotel(hotelList);
+        bookRoom();
+    }
 
+    private void bookHotel(ArrayList<Hotel> hotelList) {
         while(!isDoneHotel) {
             System.out.println("Введите название отеля:");
             hotelName = input.nextLine();
@@ -47,7 +50,9 @@ public class ConsoleService {
                 System.out.println("Такой отель не найден!");
             }
         }
+    }
 
+    private void bookRoom() {
         while(!isDoneRoom) {
             System.out.println("Введите количество спальных мест:");
             amountBed = input.nextInt();

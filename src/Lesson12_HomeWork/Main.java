@@ -43,7 +43,7 @@ public class Main {
 
         ConsoleService consoleService = new ConsoleService();
 
-        consoleService.consoleService(hotelArrayList,clientList);
+        consoleService.booking(hotelArrayList,clientList);
 
     }
 }
