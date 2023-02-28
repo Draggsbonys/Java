@@ -10,7 +10,6 @@ public class ConsoleService {
     private boolean isDoneNumber = false;
     private boolean isDoneOperation = false;
     private boolean isDoneAccountTo = false;
-    private boolean isDoneSum = false;
     private boolean isDoneTransferSum = false;
     private String accountNumber;
     private String accountNumberTo;
@@ -70,7 +69,8 @@ public class ConsoleService {
                     while(!isDoneTransferSum) {
                         System.out.println("Введите сумму которую хотите перевести:");
                         sum = inputInt.nextInt();
-                        billService.moneyTransfer(account,accountTo,sum,isDoneTransferSum);
+                        billService.moneyTransfer(account,accountTo,sum);
+                        break;
                     }
                     isDoneAccountTo = false;
                     break;

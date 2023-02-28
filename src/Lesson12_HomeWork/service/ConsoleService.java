@@ -18,8 +18,6 @@ public class ConsoleService {
     private boolean isDoneClient = false;
     private boolean isDoneHotel = false;
     private boolean isDoneRoom = false;
-    private boolean hasFreeRoom;
-
     public void consoleService(ArrayList<Hotel> hotelList, ArrayList<Client> clientList){
 
         while(!isDoneClient) {
@@ -51,20 +49,19 @@ public class ConsoleService {
         }
 
         while(!isDoneRoom) {
-            hasFreeRoom = true;
             System.out.println("Введите количество спальных мест:");
             amountBed = input.nextInt();
-            hasFreeRoom = true;
             for (Room room: hotel.getRoomList()) {
                 if (amountBed == room.getAmountBed()) {
                     if (room.getIsFree() == true) {
                         room.setIsFree(false);
                         this.room = room;
-                        hasFreeRoom = room.getIsFree();
                         paymentService(client, room.getCostRoom());
+                        isDoneRoom = true;
                         break;
                     } else {
-                        hasFreeRoom = false;
+                        System.out.println("Свободных номеров с таким количеством спальных мест нет");
+                        break;
                     }
                 } else if (amountBed < 1) {
                     System.out.println("Минимальное количество спальных мест 1");
@@ -74,9 +71,7 @@ public class ConsoleService {
                     break;
                 }
             }
-            if (hasFreeRoom == false) {
-                System.out.println("Свободных номеров с таким количеством спальных мест нет");
-            }
+
         }
     }
 }

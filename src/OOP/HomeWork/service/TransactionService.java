@@ -23,7 +23,7 @@ public class TransactionService {
         }
     }
 
-    public void moneyTransfer(Account accountFrom, Account accountTo, int sum, boolean isDoneTransferSum) {
+    public void moneyTransfer(Account accountFrom, Account accountTo, int sum) {
         int balanceFrom = accountFrom.getBill().getAmount();
         int balanceTo = accountTo.getBill().getAmount();
         if (balanceFrom >= sum) {
@@ -31,7 +31,6 @@ public class TransactionService {
             accountTo.getBill().setAmount(balanceTo+sum);
             System.out.println("Перевод успешно совершен!");
             System.out.println("Текущий баланс составляет " + accountFrom.getBill().getAmount() + " тенге");
-            isDoneTransferSum = true;
         } else {
             System.out.println("Недостаточно средств!");
         }
