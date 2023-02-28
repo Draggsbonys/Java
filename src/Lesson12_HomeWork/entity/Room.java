@@ -5,15 +5,15 @@ public class Room {
     private int costRoom;
     private boolean isFree;
 
-    public Room(int amountPeople, int costRoom, boolean isFree) {
-        this.amountPeople = amountPeople;
+    public Room(int amountBed, int costRoom, boolean isFree) {
+        this.amountPeople = amountBed;
         this.costRoom = costRoom;
         this.isFree = isFree;
     }
-    public int getAmountPeople() {
+    public int getAmountBed() {
         return amountPeople;
     }
-    public void setAmountPeople(int amountPeople) {
+    public void setAmountBed(int amountPeople) {
         this.amountPeople = amountPeople;
     }
     public int getCostRoom() {

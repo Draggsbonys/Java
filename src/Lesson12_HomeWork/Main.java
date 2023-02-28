@@ -10,8 +10,8 @@ import Lesson12_HomeWork.service.ConsoleService;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Room> parisRoomList = new ArrayList<>(Arrays.asList(
-                new Room(1,1000,true),
-                new Room(1,1000,true),
+                new Room(1,1000,false),
+                new Room(1,1000,false),
                 new Room(2,2000,true),
                 new Room(2,2000,true),
                 new Room(3,3000,true),
@@ -40,7 +40,7 @@ public class Main {
         Bill billLada = new Bill(2000);
 
         Client sergeyShmidt = new Client("Sergey","Shmidt","+9906456987","one@gmail.com", billSergey);
-        Client ladaShmidt = new Client("Lada", "Shmidt", "+990612345", "two@gmail.com", billLada);
+        Client ladaShmidt = new Client("Lada", "Shmidt", "+9906123456", "two@gmail.com", billLada);
 
         ArrayList<Client> clientList = new ArrayList<>(Arrays.asList(sergeyShmidt, ladaShmidt));
 

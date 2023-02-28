@@ -1,11 +1,9 @@
 package Lesson12_HomeWork.service;
 import Lesson12_HomeWork.entity.Client;
 
-public class BillService {
-    private int balance;
-
-    public void paymentService(Client client, int sum) {
-        balance = client.getBill().getAmount();
+public class TransactionService {
+    public static void paymentService(Client client, int sum) {
+        int balance = client.getBill().getAmount();
         if (balance >= sum) {
             client.getBill().setAmount(balance - sum);
             System.out.println("Номер успешно забронирован!");

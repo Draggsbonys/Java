@@ -1,21 +1,25 @@
 package OOP.HomeWork;
+import OOP.HomeWork.service.ConsoleService;
 import OOP.HomeWork.entity.Account;
 import OOP.HomeWork.entity.Bill;
 import OOP.HomeWork.entity.Person;
-import OOP.HomeWork.service.ConsoleService;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleService adjustment = new ConsoleService();
+        ConsoleService consoleService = new ConsoleService();
 
-        Person sergeyShmidt = new Person("Sergey", "Sergey", "+77071721720");
-        Bill KZ0001 = new Bill(1000);
-        Account accountSergey = new Account(sergeyShmidt, KZ0001);
+        Account accountSergey = new Account(
+                new Person("Sergey", "Sergey", "+9999999999"),
+                new Bill(1000));
 
-        Person ladaShmidt = new Person("Lada", "Shmidt", "+77056041422");
-        Bill KZ0002 = new Bill(500);
-        Account accountLada = new Account(ladaShmidt, KZ0002);
+        Account accountLada = new Account(
+                new Person("Lada", "Shmidt", "+8888888888"),
+                new Bill(500));
 
-        adjustment.adjustment(accountSergey,accountLada);
+        ArrayList<Account> accountList = new ArrayList<>(Arrays.asList(accountSergey, accountLada));
+
+        consoleService.consoleService(accountList);
     }
 }
