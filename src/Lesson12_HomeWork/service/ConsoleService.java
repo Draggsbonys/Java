@@ -59,9 +59,6 @@ public class ConsoleService {
                         paymentService(client, room.getCostRoom());
                         isDoneRoom = true;
                         break;
-                    } else {
-                        System.out.println("Свободных номеров с таким количеством спальных мест нет");
-                        break;
                     }
                 } else if (amountBed < 1) {
                     System.out.println("Минимальное количество спальных мест 1");
@@ -71,7 +68,9 @@ public class ConsoleService {
                     break;
                 }
             }
-
+            if (isDoneRoom == false) {
+                System.out.println("Свободных номеров с таким количеством спальных мест нет");
+            }
         }
     }
 }
