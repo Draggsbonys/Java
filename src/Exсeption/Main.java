@@ -1,8 +1,4 @@
 package Exсeption;
-/*
- * java.io - это пакет, в котором собраны классы и интерфейсы, которые предназначены
- * Для чтения и записи информации из/в какой либо источник, например файл
- */
 import java.io.*;
 /*
  * В Java исключения (Exceptions) представляют собой способ обработки ошибок в программе.
@@ -22,22 +18,30 @@ import java.io.*;
  */
 public class Main {
     public static void main(String[] args) throws Exception {
-        // ArrayIndexOutOfBoundsException, так как пятого индекса в нашем массиве нет
+        // Unchecked exceptions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         int[] array = {1,2,3};
         System.out.println(array[5]);
 
-        // NullPointerException, так как у null не может быть длины
         String s = null;
         System.out.println(s.length());
 
-        // Класс File - абстрактная репрезентация пути к файлу или папке
-        File file = new File("test10.txt");
+        // Checked exception //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        File file1 = new File("test11.txt");
 
-        // Класс FileInputStream предназначен для создания потока, с помощью которого можно читать информацию из источника
-        FileInputStream fileInputStream = new FileInputStream(file);
+        // Блок try используется для написания кода, который может привести ошибкам или неожиданным ситуациям.
+        try{
+            FileInputStream fileInputStream1 = new FileInputStream(file1);
+        }
 
-        // Класс FileOutputStream предназначен для создания потока, с помощью которого можно записывать информацию в источник
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        // Блок catch используется для обработки исключений, которые могут быть выброшены в блоке try.
+        catch(FileNotFoundException e) {
+            System.out.println("Файл был удален " + e);
+        }
+
+        // Блок finally используется для написания кода, который должен быть выполнен независимо от того, было ли выброшено исключение в блоке try или нет.
+        finally {
+            System.out.println("This finally block");
+        }
 
         /*
          * Конструкторы классов FileInputStream и FileOutputStream могут выбрасывать исключение FileNotFoundException
@@ -46,5 +50,17 @@ public class Main {
          * Методы read и write классов FileInputStream и FileOutputStream могут выбрасывать исключение IOException
          * Если поток из/в который производилось чтение/запись был прерван
          */
+
+        /*
+         * Иерархия наследования Throwable классов:
+         *                                  Object
+         *                                    |
+         *                                Throwable
+         *                               /         \
+         *                        Exception        Error
+         *                      /          \
+         *      RuntimeException       IOException
+         */
+
     }
 }
