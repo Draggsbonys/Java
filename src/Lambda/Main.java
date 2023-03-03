@@ -12,16 +12,13 @@ public class Main {
         ));
 
           // Выводим в консоль всех студентов чья оценка больше 6
-          studentCheck(studentArrayList, (student) -> {
+          studentCheck(studentArrayList, (Student student) -> {
               // Реализация метода функционального интерфейса
               return student.getGrade() > 6;
           });
 
-          // Выводим в консоль всех студентов чей возраст больше 18
-          studentCheck(studentArrayList, (student) -> {
-              // Реализация метода функционального интерфейса
-              return student.getAge() > 18;
-          });
+          // Сокращенный вариант записи лямбда выражения без указания типа данных
+          studentCheck(studentArrayList, student -> student.getAge() > 18);
 
 
     }
