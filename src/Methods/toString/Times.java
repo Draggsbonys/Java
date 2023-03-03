@@ -6,11 +6,11 @@ package Methods.toString;
  * По умолчанию метод toString() возвращает имя_класса@число
  * И для корректного вывода объекта на экран, он должен быть перезаписан
 */
-public class Animal {
+public class Times {
     String name;
     int age;
 
-    Animal(String name, int age) {
+    Times(String name, int age) {
         this.name = name;
         this.age = age;
     }
