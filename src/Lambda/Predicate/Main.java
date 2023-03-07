@@ -1,8 +1,8 @@
-package Lambda.HomeWork;
+package Lambda.Predicate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Lambda.HomeWork.Employee.*;
+import static Lambda.Predicate.Employee.*;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Employee> employeeArrayList = new ArrayList<>(Arrays.asList(
@@ -12,10 +12,12 @@ public class Main {
                 new Employee("Egor", "FBI",7000)
         ));
         filterOfEmployee(employeeArrayList, employee -> employee.getDepartment().equals("IT") && employee.getSalary() > 200);
+
         filterOfEmployee(employeeArrayList, employee -> {
             String firstChar = String.valueOf(employee.getName().charAt(0));
             return firstChar.equals("E") && employee.getSalary() != 450;
         });
+
         filterOfEmployee(employeeArrayList, employee -> employee.getName().equals(employee.getDepartment()));
     }
 }

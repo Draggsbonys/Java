@@ -4,7 +4,8 @@ import java.util.Arrays;
 import static Lambda.Student.*;
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Student> studentArrayList = new ArrayList<>(Arrays.asList(
+        // var - local variable type inference
+        var studentArrayList = new ArrayList<>(Arrays.asList(
                 new Student("Alex", 5,17),
                 new Student("Oleg", 10,15),
                 new Student("Masha", 4,25),
