@@ -26,5 +26,9 @@ public class Main {
                 new StringBuilder("World")
         ));
         System.out.println(getSecondElement(stringBuilderArrayList));
+
+        // Пример реализации subtypes generic
+        Subtyping<Integer> integerInfo = new Subtyping<>(5);
+        System.out.println(integerInfo.getElement(2));
     }
 }
