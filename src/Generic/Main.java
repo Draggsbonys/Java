@@ -1,7 +1,10 @@
 package Generic;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import static Generic.ParameterizedMethod.*;
+import static Generic.WildCard.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,5 +33,12 @@ public class Main {
         // Пример реализации subtypes generic
         Subtyping<Integer> integerInfo = new Subtyping<>(5);
         System.out.println(integerInfo.getElement(2));
+
+        // Пример реализации wildcard
+        List<? extends Number> integerList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
+
+        showListInfo(integerList);
+        showListInfo(stringList);
     }
 }
