@@ -8,5 +8,5 @@ package Collection;
  * Если требуется частый доступ к элементам по индексу, то лучше использовать ArrayList.
  * Если же требуется частое добавление или удаление элементов в середине списка, то лучше использовать LinkedList.
  */
-public class LinkedList {
+public class _LinkedList {
 }

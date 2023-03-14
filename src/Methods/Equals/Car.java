@@ -1,4 +1,7 @@
 package Methods.Equals;
+
+import java.util.Objects;
+
 /*
  * Метод equals() в Java используется для сравнения объектов на равенство.
  * Он определен в классе Object, который является базовым классом для всех классов в Java.
@@ -12,7 +15,7 @@ package Methods.Equals;
  * Рефлексивность - для non-null ссылочной переменной а, а.equals(a) всегда должно возвращать true
  * Транзитивность - для non-null ссылочных переменных a, b и с, если a.equals(b) и b.equals(c) возвращает true, то a.equals(c) тоже должно возвращать true
  * Постоянство - для non-null ссылочных переменных a и b, неоднократный вызов a.equals(b) должен возвращать или только true, или только false
- * Для non-null ссылочной переменной а. a.equals(null) всегда должно возвращать false
+ * Для non-null ссылочной переменной а, a.equals(null) всегда должно возвращать false
  *
 */
 public class Car {
@@ -25,13 +28,12 @@ public class Car {
     }
 
     // Пример перезаписи метода equals
+
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Car) {
-            Car car = (Car) obj;
-            return (color.equals(car.color) && engine.equals(car.engine));
-        } else {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(color, car.color) && Objects.equals(engine, car.engine);
     }
 }
