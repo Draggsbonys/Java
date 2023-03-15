@@ -32,7 +32,6 @@ public class Employee implements Comparable<Employee>{
         this.surname = surname;
         this.salary = salary;
     }
-
     @Override
     public String toString() {
         return "Employee{" +

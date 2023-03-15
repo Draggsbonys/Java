@@ -1,4 +1,8 @@
 package Algorithm;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * Сортировка пузырьком - метод сравнивает попарно элементы массива, таким образом что максимальный элемент перемещается на последнее место в массиве
  * Вторым проходом, следующий по величине элемент переместится на предпоследнее место
@@ -6,9 +10,32 @@ package Algorithm;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] arrayInt = new int[] {10, 4, 2, 15, 29, 3, 7};
-        bubbleSort(arrayInt);
+        List<Integer> list = new ArrayList<>();
+        list.add(5);
+        list.add(7);
+        list.add(1);
+        list.add(0);
+        list.add(9);
+        list.add(8);
+        list.add(3);
+        list.add(2);
+        list.add(6);
+        list.add(4);
+        System.out.println(list);
 
+        boolean isSorted = true;
+        while(isSorted) {
+            isSorted = false;
+            for (int i = 1; i < list.size(); i++) {
+                if (list.get(i-1) > list.get(i)) {
+                    int temp = list.get(i-1);
+                    list.set(i-1, list.get(i));
+                    list.set(i, temp);
+                    isSorted = true;
+                }
+            }
+        }
+        System.out.println(list);
     }
 
     /*
@@ -21,27 +48,4 @@ public class BubbleSort {
      * Это связано с тем, что на каждой итерации алгоритм уменьшает размер области поиска вдвое, проверяя средний элемент массива на равенство искомому значению.
      * В результате, количество итераций, необходимых для нахождения искомого элемента, растет медленнее, чем линейно, а зависит от логарифма от количества элементов в массиве.
      */
-
-    private static void bubbleSort(int[] array){
-        boolean isSorted = false;
-        while(!isSorted) {
-            isSorted = true;
-            for (int i = 1; i < array.length; i++) {
-                if (array[i] < array[i-1]) {
-                    int temp = array[i];
-                    array[i] = array[i-1];
-                    array[i-1] = temp;
-                    isSorted = false;
-                }
-            }
-            printArray(array);
-        }
-    }
-
-    private static void printArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print("["  + array[i] + "]");
-        }
-        System.out.println();
-    }
 }

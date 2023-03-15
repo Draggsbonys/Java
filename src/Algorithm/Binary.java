@@ -1,7 +1,10 @@
 package Algorithm;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Метод binarySearch() в Java используется для выполнения бинарного поиска в отсортированном массиве.
+    Он возвращает индекс элемента в массиве, если он найден, или отрицательное значение, если элемент не найден.
+*/
 public class Binary {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>();
