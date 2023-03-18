@@ -1,7 +1,5 @@
-package Collection;
-import java.util.HashMap;
-import java.util.Map;
-
+package Collection.HashMap;
+import java.util.Objects;
 /*
     Map в Java - это интерфейс, который представляет ассоциативный массив, то есть структуру данных,
     позволяющую хранить пары ключ-значение, где каждый ключ связан с определенным значением.
@@ -24,27 +22,43 @@ import java.util.Map;
 
     При поиске элемента в HashMap, сначала вычисляется hashCode() и находится соответствующий индекс массива.
     Затем происходит поиск в цепочке связанных списков, чтобы найти элемент с нужным ключом.
-*/
-public class _HashMap {
-    public static void main(String[] args) {
-        Map<Integer, String> stringMap = new HashMap<>();
-        // Метод put() добавляет элемент в коллекцию
-        stringMap.put(1000, "Sergey");
-        stringMap.put(1001, "Leonid");
-        // Метод putIfAbsent() добавляет элемент в коллекцию, если такой элемент отсутствует в ней
-        stringMap.putIfAbsent(1002, "Maria");
-        // Метод get() позволяет получить элемент принимая в параметр ключ данного элемента
-        stringMap.get(1000);
-        // Метод remove() удаляет элемент из коллекции принимая в параметр ключ данного элемента
-        stringMap.remove(1001);
-        // Метод containsValue() возвращает true, если такой элемент присутствует в коллекции
-        stringMap.containsValue("Maria");
-        // Метод containsKey() возвращает true, если такой ключ присутствует в коллекции
-        stringMap.containsKey(1002);
-        // Метод keySet() возвращает множество всех ключей в коллекции
-        stringMap.keySet();
-        // Метод values() возвращает множество значений в коллекции
-        stringMap.values();
 
+    Классы и поля классов, которые являются ключами HashMap рекомендуется делать константными,
+    иначе меняя поля класса, мы меняем HashCode объекта и найти измененный объект в HashMap будет невозможно по его имени.
+
+    В худшем случае, время поиска элемента в HashMap в BigO notation равно O(n), где n - это количество элементов в HashMap.
+    Однако, при правильной настройке хэш-функции и решении коллизий, время поиска элемента в HashMap в среднем составляет O(1),
+    т.е. постоянное время. Это делает поиск элемента в HashMap очень эффективным для большинства случаев использования.
+*/
+public final class Student {
+    final String name;
+    final String surname;
+    final int course;
+
+    Student(String name, String surname, int course) {
+        this.name = name;
+        this.surname = surname;
+        this.course = course;
+    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", course=" + course +
+                '}';
+    }
+
+    // Для корректного сравнения объектов внутри HashMap необходимо переопределять оба метода equals() и hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return course == student.course && Objects.equals(name, student.name) && Objects.equals(surname, student.surname);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, course);
     }
 }
