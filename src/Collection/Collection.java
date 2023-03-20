@@ -8,16 +8,17 @@ public class Collection {
      * В Java коллекции представлены интерфейсами, определенными в пакете java.util. Эти интерфейсы включают в себя:
 
                                    Иерархия коллекций
-                                        Iterable
-                                           |
-                              _______  Collection
-                             /             |    \
-                    _____ List ____      Queue  Set  Map
-                   /       |       \
-          ArrayList      Vector    LinkedList
-                           |
-                         Stack
-
+                                                  Iterable
+                                                     |
+                              _________________  Collection __________
+                             /                       |                \
+                    _____ List ____                Queue              Set                            __________ Map __________
+                   /       |       \                               /       \                        /            |            \
+          ArrayList      Vector    LinkedList                HashSet       SortedSet          HashMap       SortedMap      HashTable
+                           |                                    |              |                 |               |
+                         Stack                            LinkedHashSet   NavigableSet     LinkedHashMap    NavigableMap
+                                                                               |                                 |
+                                                                            TreeSet                           TreeMap
 
      - Iterable это интерфейс представляет собой механизм, позволяющий последовательно перебирать элементы коллекции.
 
