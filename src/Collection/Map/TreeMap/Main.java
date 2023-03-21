@@ -9,14 +9,14 @@ public class Main {
         Student st2 = new Student("Elisa", "Watson", 1);
         Student st3 = new Student("Bill", "Red", 4);
         Student st4 = new Student("Olga", "Krylova", 2);
-        Student st5 = new Student("Olga", "Krylova", 3);
+        Student st5 = new Student("Olga", "Krylova", 2);
         Student st6 = new Student("Egor", "Kuznetcov", 5);
 
         treeMap.put(st2, 5);
         treeMap.put(st4, 1);
         treeMap.put(st1, 0);
         treeMap.put(st3, 3);
-        // При попытке добавления ключей с одинаковым значением, старый элемент будет затерт новым, элементы TreeMap должны быть уникальными
+        // При попытке добавления ключей с одинаковым ключем, старый элемент будет затерт новым, ключи TreeMap должны быть уникальными
         treeMap.put(st5, 2);
 
         System.out.println(treeMap);

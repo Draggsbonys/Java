@@ -7,6 +7,7 @@ public class Main {
        Student st1 = new Student("Bob",20, 1);
        Student st2 = new Student("Bill", 16, 2);
        Student st3 = new Student("Maria", 22, 3);
+       Student st4 = new Student("Maria", 22, 3);
 
        Set<Student> hashSet = new HashSet<>();
 
@@ -14,6 +15,10 @@ public class Main {
        hashSet.add(st1);
        hashSet.add(st2);
        hashSet.add(st3);
+       // При попытке добавления ключей с одинаковым значением, старый элемент будет затерт новым, элементы HashSet должны быть уникальными
+       hashSet.add(st4);
+
+       System.out.println(hashSet);
 
        // Метод size() возвращает количество элементов в списке.
        hashSet.size();

@@ -6,6 +6,7 @@ public class Main {
         Student st2 = new Student("Bill", 16, 2);
         Student st3 = new Student("Maria", 22, 3);
         Student st4 = new Student("Olya", 18, 2);
+        Student st5 = new Student("Olya", 18, 2);
 
         LinkedHashMap<Integer, Student> linkedHashMap = new LinkedHashMap<>(16, 0.75f, true);
         /* loadFactor это параметр, используемый при создании объектов классов HashMap, HashSet, Hashtable и LinkedHashMap, который определяет,
@@ -20,6 +21,8 @@ public class Main {
         linkedHashMap.put(2, st2);
         linkedHashMap.put(3, st3);
         linkedHashMap.put(4, st4);
+        // При попытке добавления ключей с одинаковым значением, старый элемент будет затерт новым, элементы LinkedHashMap должны быть уникальными
+        linkedHashMap.put(4, st5);
 
         // До использования элементов
         System.out.println(linkedHashMap);
