@@ -1,7 +1,11 @@
 package Lambda.Predicate;
 import java.util.ArrayList;
 import java.util.function.Predicate;
-
+/*
+    Predicate это функциональный интерфейс, который принимает один аргумент и возвращает значение типа boolean.
+    Он определен в пакете java.util.function и называется Predicate.
+    Предикат используется для определения, удовлетворяет ли объект определенному условию.
+*/
 public class Employee {
     private String name;
     private String department;
@@ -14,7 +18,6 @@ public class Employee {
             }
         });
     }
-
     @Override
     public String toString() {
         return "Name: " + name + ", department: " + department + ", salary: " + salary;

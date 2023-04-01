@@ -1,6 +1,8 @@
 package Lambda;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
 import static Lambda.Student.*;
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +23,22 @@ public class Main {
           // Сокращенный вариант записи лямбда выражения без указания типа данных
           studentCheck(studentArrayList, student -> student.getAge() > 18);
 
+          /*
+            В лямбда выражении справа от оператора стрелка находится тело метода,
+            которое было бы у метода соответствующего класса,
+            имплементировавшего наш интерфейс с единственным методом.
+          */
+
+        // Можно поместить лямбда выражение в переменную для неоднократного дальнейшего использования
+        StudentInterface studentInterface = (Student student) -> {
+            return student.getGrade() < 6;
+        };
+        studentCheck(studentArrayList, studentInterface);
+
+        // Способ перезаписать метод интерфейса Comparator
+        Collections.sort(studentArrayList, (firstStudent, secondStudent) -> firstStudent.getAge()-secondStudent.getAge());
+
 
     }
+
 }
