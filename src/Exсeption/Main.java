@@ -32,7 +32,6 @@ public class Main {
         // Блок try используется для написания кода, который может привести ошибкам или неожиданным ситуациям.
         try{
             FileInputStream fileInputStream1 = new FileInputStream(file1);
-
         }
 
         // Блок catch используется для обработки исключений, которые могут быть выброшены в блоке try.
