@@ -3,26 +3,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 /*
     Метод sorted используется для сортировки элементов в коллекции.
     Он может быть использован для сортировки массивов или списков любых объектов,
     которые реализуют интерфейс Comparable или имеют свойство Comparator.
 */
-class Student {
-    String name;
-    int age;
-    Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-    @Override
-    public String toString(){
-        return name + " " + age;
-    }
-}
+
 public class Sorted {
-    public static void main(String[] args) {
+    class Student {
+        String name;
+        int age;
+        Student(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+        @Override
+        public String toString(){
+            return name + " " + age;
+        }
+    }
+    public void main(String[] args) {
         int[] array = {3,9,2,5,7,8};
         array = Arrays.stream(array).sorted().toArray();
         System.out.println(Arrays.toString(array));
