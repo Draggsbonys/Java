@@ -40,6 +40,9 @@ public class Chaining {
     4. distinct();
     5. peek();
     6. flatMap();
+    7. limit();
+    8. skip();
+    9. mapToInt();
 
     Terminal methods - принимают, но не возвращают потоки.
     1. forEach();
