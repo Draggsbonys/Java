@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /*
-    Метод mapToInt в Java предназначен для преобразования потока объектов в поток примитивных типов int.
+    Метод mapToInt предназначен для преобразования потока объектов в поток примитивных типов int.
 */
 public class MapToInt {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class MapToInt {
         listCar.add(audi);
 
         // Преобразуем наш список машин в список их стоимости типа int, для конвертации int -> Integer нам поможет метод boxed()
-        List<Integer> listEngine = listCar.stream().mapToInt(element -> element.getCost()).boxed().collect(Collectors.toList());
+        List<Integer> listCost = listCar.stream().mapToInt(element -> element.getCost()).boxed().collect(Collectors.toList());
 
         // У метода mapToInt() есть метод sum(), с помощью которого мы можем проссумирвоать стоимость наших машин
         int sum = listCar.stream().mapToInt(element -> element.getCost()).sum();
