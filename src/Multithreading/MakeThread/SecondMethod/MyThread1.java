@@ -1,4 +1,4 @@
-package Multithreading.SecondMethod;
+package Multithreading.MakeThread.SecondMethod;
 
 public class MyThread1 implements Runnable {
     @Override
