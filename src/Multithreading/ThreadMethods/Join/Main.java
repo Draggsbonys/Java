@@ -1,5 +1,4 @@
 package Multithreading.ThreadMethods.Join;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException{
         MyThread myThread = new MyThread();
