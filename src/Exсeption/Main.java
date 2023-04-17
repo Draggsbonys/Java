@@ -20,11 +20,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // Unchecked exceptions //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        int[] array = {1,2,3};
-        System.out.println(array[5]);
-
-        String s = null;
-        System.out.println(s.length());
+//        int[] array = {1,2,3};
+//        System.out.println(array[5]);
+//
+//        String s = null;
+//        System.out.println(s.length());
 
         // Checked exception //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         File file1 = new File("test11.txt");
