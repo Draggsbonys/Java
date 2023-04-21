@@ -1,4 +1,6 @@
-package Multithreading.ThreadPool;
+package Multithreading.ThreadPool.MakeThreadPool;
+import Multithreading.ThreadPool.MakeThreadPool.MyRunnable;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,7 @@ import java.util.concurrent.TimeUnit;
     Thread pool удобнее всего создавать, используя factory методы класса Executors:
 
     Executors.newFixedThreadPool(int count) - создаст pool n количеством потоков.
-    Executors.newSingleThreadExecutor() - создаст poll с одним потоком.
+    Executors.newSingleThreadExecutor() - создаст pool с одним потоком.
 */
 public class Main {
     public static void main(String[] args) throws InterruptedException{
