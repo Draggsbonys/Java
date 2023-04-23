@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 public class MyCallable implements Callable<Integer> {
     int factorial;
 
-    public MyCallable(int factorial) {
+    MyCallable(int factorial) {
         this.factorial = factorial;
     }
 

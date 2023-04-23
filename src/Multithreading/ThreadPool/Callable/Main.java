@@ -22,6 +22,7 @@ public class Main {
             e.printStackTrace();
         }
         catch(ExecutionException e) {
+            // Таким образом, ExecutionException сообщает о том, что задача не была выполнена успешно из-за возникшего исключения.
             // Метод getCause() возвращает причину выброса exception
             System.out.println(e.getCause());
         }
