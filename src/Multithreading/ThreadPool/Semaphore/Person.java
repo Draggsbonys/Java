@@ -1,7 +1,5 @@
 package Multithreading.ThreadPool.Semaphore;
-
 import java.util.concurrent.Semaphore;
-
 /*
     Semaphore - это синхронизатор, позволяющий ограничить доступ к какому-то ресурсу.
     В конструктор Semaphore нужно передавать количество потоков,
