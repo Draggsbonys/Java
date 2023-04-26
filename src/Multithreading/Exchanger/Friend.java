@@ -26,9 +26,11 @@ public class Friend extends Thread{
     }
     @Override
     public void run() {
+        // Ответ от второго потока будет хранится в reply
         Actions reply;
         for(Actions action: myActions) {
             try{
+                // Метод exchange() возвращает информацию, полученную от второго потока
                 reply = exchanger.exchange(action);
                 whoWins(action, reply);
                 sleep(2000);
@@ -37,4 +39,5 @@ public class Friend extends Thread{
                 e.printStackTrace();
             }
         }
-    }}
+    }
+}
